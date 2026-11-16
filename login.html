@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Demo: Dark Mode Login & Signup</title>
+    <style>
+        /* Modern Dark Theme Setup */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121214; /* Deep dark background */
+            color: #e1e1e6; /* Soft white text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        /* Glassmorphism/Dark Card Styling */
+        .form-container {
+            background: #1f1f23; /* Lighter dark surface */
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            width: 320px;
+            border: 1px solid #2d2d34; /* Subtle boundary border */
+        }
+        
+        h2 {
+            margin-top: 0;
+            margin-bottom: 24px;
+            color: #ffffff;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        /* Dark Mode Inputs */
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 16px 0;
+            background-color: #2a2a30; /* Dark input fields */
+            border: 1px solid #3e3e47;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border-color 0.2s, background-color 0.2s;
+        }
+        
+        /* Input Focus Effect */
+        input:focus {
+            outline: none;
+            border-color: #4ea8de; /* Electric blue accent */
+            background-color: #2d2d35;
+        }
+        
+        /* Vibrant Dark-Theme Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0077b6; /* Deep blue accent */
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+        
+        button:hover {
+            background-color: #0096c7; /* Lighter blue on hover */
+        }
+        
+        /* Footer Links */
+        .toggle-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #a0a0ba;
+        }
+        
+        .toggle-link a {
+            color: #4ea8de;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .toggle-link a:hover {
+            text-decoration: underline;
+        }
+        
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <!-- LOGIN FORM -->
+    <div id="login-box">
+        <h2>Log In</h2>
+        <form onsubmit="handleLogin(event)">
+            <input type="text" placeholder="Username or Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <div class="toggle-link">
+            Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- SIGNUP FORM (Hidden by default) -->
+    <div id="signup-box" class="hidden">
+        <h2>Create Account</h2>
+        <form onsubmit="handleSignup(event)">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="password" placeholder="Create Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <div class="toggle-link">
+            Already have an account? <a href="#" onclick="toggleForms()">Log In</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Switches the view between Login and Signup forms
+    function toggleForms() {
+        document.getElementById('login-box').classList.toggle('hidden');
+        document.getElementById('signup-box').classList.toggle('hidden');
+    }
+
+    // Fakes the login submission for class demonstration
+    function handleLogin(event) {
+        event.preventDefault(); // Prevents the page from refreshing
+        alert("Demo Mode: Login form submitted successfully! (This is where PHP would normally verify your credentials).");
+    }
+
+    // Fakes the signup submission for class demonstration
+    function handleSignup(event) {
+        event.preventDefault(); // Prevents the page from refreshing
+        alert("Demo Mode: Signup form submitted successfully! (This is where PHP would normally save this data to MySQL).");
+    }
+</script>
+
+</body>
+</html>
